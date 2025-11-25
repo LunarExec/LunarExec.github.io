@@ -19,6 +19,8 @@
       background: linear-gradient(to bottom, #0a0a1a, #0f0f2a, #151535);
       position: relative;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
     
     .font-cyber {
@@ -34,6 +36,8 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
     
     .btn-cyber:before {
@@ -58,6 +62,8 @@
     .nav-item {
       position: relative;
       transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
     }
     
     .nav-item:after {
@@ -96,23 +102,6 @@
       opacity: 1;
     }
     
-    .feature-card:after {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-      top: -50%;
-      left: -50%;
-      transform: rotate(35deg);
-      transition: all 0.6s ease;
-      z-index: -1;
-    }
-    
-    .feature-card:hover:after {
-      transform: rotate(35deg) translate(10%, 10%);
-    }
-    
     /* Animations */
     @keyframes pulseGlow {
       0%, 100% {
@@ -144,19 +133,6 @@
       to { opacity: 1; }
     }
     
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1.5s ease-in-out forwards;
-    }
-    
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
     /* Mobile navbar */
     .mobile-menu {
       transform: translateY(-100%);
@@ -166,51 +142,6 @@
     .mobile-menu.active {
       transform: translateY(0);
     }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: #111111;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #8b5cf6, #a78bfa);
-      border-radius: 3px;
-    }
-    
-    /* Executor logos animation */
-    .executor-logo {
-      transition: all 0.3s ease;
-    }
-    
-    .executor-logo:hover {
-      transform: scale(1.05) rotate(-2deg);
-      filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
-    }
-
-    /* Moon theme specific styles */
-    .bg-purple-500 { background-color: #8b5cf6; }
-    .bg-purple-400 { background-color: #a78bfa; }
-    .text-purple-400 { color: #a78bfa; }
-    .text-purple-300 { color: #c4b5fd; }
-    .border-purple-400 { border-color: #a78bfa; }
-    .border-purple-500 { border-color: #8b5cf6; }
-    .border-purple-400\/50 { border-color: rgba(167, 139, 250, 0.5); }
-    .border-purple-500\/30 { border-color: rgba(139, 92, 246, 0.3); }
-    .border-purple-500\/50 { border-color: rgba(139, 92, 246, 0.5); }
-    .bg-purple-500\/10 { background-color: rgba(139, 92, 246, 0.1); }
-    .from-purple-400 { --tw-gradient-from: #a78bfa; }
-    .to-indigo-500 { --tw-gradient-to: #6366f1; }
-    .to-indigo-600 { --tw-gradient-to: #4f46e5; }
-    .via-purple-300 { --tw-gradient-via: #c4b5fd; }
-    .hover\:border-purple-400:hover { border-color: #a78bfa; }
-    .hover\:border-purple-500:hover { border-color: #8b5cf6; }
-    .hover\:text-purple-400:hover { color: #a78bfa; }
-    .hover\:shadow-indigo-500\/30:hover { --tw-shadow-color: rgba(99, 102, 241, 0.3); }
     
     /* Viewer counter */
     .viewer-counter {
@@ -254,11 +185,10 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-5px) rotate(2deg); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
     }
-  </style>
-  <style>
+
     /* Utility classes */
     .fixed { position: fixed; }
     .absolute { position: absolute; }
@@ -376,7 +306,6 @@
     .hover\:opacity-90:hover { opacity: 0.9; }
     .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
     .focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
-    .group:hover .group-hover\:opacity-100 { opacity: 1; }
     
     @media (min-width: 768px) {
       .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -404,4 +333,324 @@
           <!-- Moon Logo -->
           <div class="moon-logo">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 12.79C20.8427 14.492 20.2039 16.114 19.1582 17.466C18.1126 18.818 16.7035 19.846 15.0957 20.4265C13.4879 21.007 11.710
+              <path d="M21 12.79C20.8427 14.492 20.2039 16.114 19.1582 17.466C18.1126 18.818 16.7035 19.846 15.0957 20.4265C13.4879 21.007 11.710" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 3C10.6868 3 9.38642 3.25866 8.17317 3.7612C6.95991 4.26375 5.85752 5.00035 4.92893 5.92893C4.00035 6.85752 3.26375 7.95991 2.7612 9.17317C2.25866 10.3864 2 11.6868 2 13C2 14.3132 2.25866 15.6136 2.7612 16.8268C3.26375 18.0401 4.00035 19.1425 4.92893 20.0711C5.85752 20.9997 6.95991 21.7362 8.17317 22.2388C9.38642 22.7413 10.6868 23 12 23C13.3132 23 14.6136 22.7413 15.8268 22.2388C17.0401 21.7362 18.1425 20.9997 19.0711 20.0711C19.9997 19.1425 20.7362 18.0401 21.2388 16.8268C21.7413 15.6136 22 14.3132 22 13C22 11.6868 21.7413 10.3864 21.2388 9.17317C20.7362 7.95991 19.9997 6.85752 19.0711 5.92893C18.1425 5.00035 17.0401 4.26375 15.8268 3.7612C14.6136 3.25866 13.3132 3 12 3Z" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="text-2xl font-bold text-purple-400 glow-logo font-cyber">LunarExec</div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#" class="nav-item text-white hover:text-purple-400 font-medium">Home</a>
+          <a href="#executors" class="nav-item text-white hover:text-purple-400 font-medium">Supported Executors</a>
+          <a href="#features" class="nav-item text-white hover:text-purple-400 font-medium">Features</a>
+          <a href="#download" class="nav-item text-white hover:text-purple-400 font-medium">Download</a>
+          
+          <!-- Viewer Counter -->
+          <div class="viewer-counter flex items-center space-x-2">
+            <div class="online-dot"></div>
+            <span class="text-purple-300 text-sm font-medium"><span id="viewerCount">247</span> online now</span>
+          </div>
+          
+          <button class="btn-cyber bg-gradient-to-r from-purple-400 to-indigo-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
+            <span class="relative z-10">Download Now</span>
+          </button>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center space-x-4">
+          <!-- Mobile Viewer Counter -->
+          <div class="viewer-counter flex items-center space-x-2">
+            <div class="online-dot"></div>
+            <span class="text-purple-300 text-sm font-medium"><span id="mobileViewerCount">247</span> online</span>
+          </div>
+          
+          <button id="menu-toggle" class="text-white p-2 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="mobile-menu" class="mobile-menu absolute top-full left-0 w-full bg-black/95 border-b border-purple-500/50 lg:hidden">
+        <div class="flex flex-col space-y-4 p-6">
+          <a href="#" class="text-white hover:text-purple-400 font-medium py-2">Home</a>
+          <a href="#executors" class="text-white hover:text-purple-400 font-medium py-2">Supported Executors</a>
+          <a href="#features" class="text-white hover:text-purple-400 font-medium py-2">Features</a>
+          <a href="#download" class="text-white hover:text-purple-400 font-medium py-2">Download</a>
+          <div class="flex flex-col space-y-3 pt-4 border-t border-gray-700">
+            <a href="#download" class="bg-gradient-to-r from-purple-400 to-indigo-600 w-full text-center py-2 rounded-lg font-semibold hover:opacity-90 transition-all duration-300">Download Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="text-center py-24 px-4 fade-in relative overflow-hidden">
+    <div class="absolute inset-0 bg-radial-gradient pointer-events-none opacity-30" style="background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.3), transparent 70%);"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 font-cyber">
+        Ultimate Fix for <br>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-500">Roblox Executors</span>
+      </h1>
+      <p class="text-gray-300 text-xl mb-8 max-w-xl mx-auto">Fix your favorite Roblox executors in one click — 100% Free.</p>
+      
+      <!-- PC Only Badge -->
+      <div class="mb-8">
+        <div class="pc-badge inline-flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Windows PC Only
+        </div>
+      </div>
+      
+      <!-- Stats Row -->
+      <div class="flex justify-center items-center space-x-8 mb-12">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-purple-400 font-cyber">17.2K+</div>
+          <div class="text-gray-400 text-sm">Downloads</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-indigo-400 font-cyber">94%</div>
+          <div class="text-gray-400 text-sm">Success Rate</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-purple-400 font-cyber" id="totalUsers">4.8K+</div>
+          <div class="text-gray-400 text-sm">Active Users</div>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="LunarExec-Fixer.exe" class="btn-cyber bg-gradient-to-r from-purple-400 to-indigo-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
+          <span class="relative z-10">Download Now</span>
+        </a>
+        <a href="#executors" class="bg-black px-8 py-3 rounded-lg font-semibold text-purple-400 border border-purple-400/50 hover:border-purple-400 transition-all duration-300">
+          Supported Executors
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Executors -->
+  <section id="executors" class="py-24 px-6 bg-gray-900/50 fade-in">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold font-cyber mb-4">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500">Supported Roblox Executors</span>
+      </h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">LunarExec fixes common crashes, errors, and performance issues for these popular Roblox executors.</p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto">
+      <!-- Original 6 -->
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">V</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Velocity</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">N</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Nezur</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">R</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Ronix</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">S</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Solara</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">A</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">AWP</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">S</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Swift</h3>
+      </div>
+    </div>
+
+    <!-- Additional Executors -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto mt-8">
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">V</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Volcano</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">X</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Xeno</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">H</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Hydrogen</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">C</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Codex</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">E</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Elysian</h3>
+      </div>
+      
+      <div class="bg-black/60 p-6 rounded-xl border border-purple-500/30 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 text-center">
+        <div class="executor-logo rounded-lg mb-4 bg-gray-800/50 p-4 flex items-center justify-center h-28">
+          <span class="text-4xl font-cyber text-purple-400">Z</span>
+        </div>
+        <h3 class="text-lg font-semibold text-purple-400 font-cyber">Zen</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="py-24 px-6 bg-black fade-in relative overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-30 pointer-events-none"></div>
+    
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl font-bold font-cyber mb-8">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500">Ready to Fix Your Executor?</span>
+      </h2>
+      
+      <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">Download LunarExec now and get your favorite Roblox executor working again in seconds.</p>
+      
+      <div class="relative max-w-md mx-auto bg-black/80 p-8 rounded-2xl border border-purple-500/30 mb-12">
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-400 to-indigo-600 rounded-2xl opacity-50 blur-sm"></div>
+        <div class="relative bg-black/95 p-8 rounded-xl z-10">
+          <h3 class="text-2xl font-cyber text-purple-400 mb-4">LunarExec v2.5</h3>
+          
+          <!-- Last Updated -->
+          <div class="text-gray-400 text-sm mb-4">Last Updated: <span id="lastUpdated">November 2025</span></div>
+          
+          <ul class="text-left mb-6 space-y-3">
+            <li class="flex items-center text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Works with all popular executors
+            </li>
+            <li class="flex items-center text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              100% Free - No hidden fees
+            </li>
+            <li class="flex items-center text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Regular updates for new Roblox versions
+            </li>
+          </ul>
+          
+          <div class="flex flex-col space-y-4">
+            <button class="relative btn-cyber group">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-400 to-indigo-600 rounded-lg opacity-70 group-hover:opacity-100 blur transition duration-200"></div>
+              <a href="LunarExec-Fixer.exe" class="relative flex items-center justify-center bg-black text-white font-cyber font-bold py-4 px-8 rounded-lg w-full text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                DOWNLOAD NOW
+              </a>
+            </button>
+            
+            <div class="text-gray-400 text-sm">
+              <span id="downloadCount">17.2K</span> Downloads • <span id="viewerCountFooter">247</span> Online
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+        });
+      }
+      
+      // Auto-update last updated date
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const now = new Date();
+      const lastUpdated = document.getElementById('lastUpdated');
+      if (lastUpdated) {
+        lastUpdated.textContent = `${months[now.getMonth()]} ${now.getFullYear()}`;
+      }
+      
+      // Viewer counter animation
+      let viewerCount = 247;
+      
+      function updateViewerCount() {
+        const randomChange = Math.floor(Math.random() * 8) - 3; // -3 to +4
+        viewerCount = Math.max(200, viewerCount + randomChange); // Never below 200
+        
+        const viewerElements = [
+          document.getElementById('viewerCount'),
+          document.getElementById('mobileViewerCount'), 
+          document.getElementById('viewerCountFooter')
+        ];
+        
+        viewerElements.forEach(element => {
+          if (element) {
+            element.textContent = viewerCount;
+          }
+        });
+      }
+      
+      // Update every 60 seconds
+      setInterval(updateViewerCount, 60000);
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
